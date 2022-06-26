@@ -1,0 +1,97 @@
+import { Canvas, Meta, Story, ArgsTable } from "@storybook/addon-docs";
+
+import Cta from ".";
+
+<Meta
+  title="atoms/Cta"
+  component={Cta}
+  argTypes={{
+    variant: {
+      control: true,
+    },
+    size: {
+      control: { type: "inline-radio" },
+    },
+    iconPosition: {
+      control: { type: "inline-radio" },
+    },
+  }}
+/>
+
+export const Template = (args) => <Cta {...args} />;
+
+# CTA (Call to Action)
+
+- [Overview](#overview)
+- [Props](#props)
+- [Variants](#variants)
+- [Sizes](#sizes)
+- [Icons](#icons)
+- [Design](#design)
+
+## Overview
+
+When to use this component
+
+```tsx
+import { Cta } from "../components/Cta/Cta";
+
+export const ExamplePage () => {
+  return (
+    <>
+      ...
+      <Cta variant="solid" href="#" label="Get in touch" />
+    </>
+  );
+}
+```
+## Props
+
+<ArgsTable of={Cta} />
+
+## Default CTA
+When using a CTA without any args passed in, the default will result in a cta with a background of bg-bits-blue and white text
+<br />
+
+<Story
+  name="Default CTA"
+  args={{ variant: "solid", label: "Get in touch", href: "#" }}
+>
+  {Template.bind({})}
+</Story>
+
+## Variants
+
+There are multiple options for Cta variants – Solid, Outline, and Link.
+<br />
+
+<Story name="Cta variants">
+  <Box className="flex flex-row items-center space-x-2">
+    <Cta href="#">Solid</Cta>
+    <Cta variant="outline" href="#">Outline</Cta>
+    <Cta variant="link" icon={true} iconPosition="right" href="#">
+      Link
+    </Cta>
+  </Box>
+</Story>
+
+## Sizes
+<br />
+
+<Story name="Sizes">
+  <Box className="flex flex-row items-center space-x-2">
+    <Cta size="lg" href="#">Large</Cta>
+    <Cta size="md" href="#">Medium</Cta>
+    <Cta size="sm" href="#">Small</Cta>
+  </Box>
+</Story>
+
+## Icons
+<br />
+
+<Story name="Icons">
+  <Box className="flex flex-row items-center space-x-2">
+    <Cta icon={true} iconPosition="right" label="Right icon" href="#" />
+    <Cta icon={true} iconPosition="left" label="Left icon" href="#" />
+  </Box>
+</Story>
