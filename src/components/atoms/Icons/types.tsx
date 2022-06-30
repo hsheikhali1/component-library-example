@@ -1,9 +1,9 @@
-import { FillColors, TextColors } from "../../utils/theme";
+import { FillColors, TextColors } from "@/components/particles/theme";
 
-export interface DefaultProps {
-	width?: number;
-	height?: number;
-	className?: string;
-	iconColor?: TextColors;
-	iconBgColor?: FillColors;
-}
+export type DefaultProps = {
+  width?: number;
+  height?: number;
+  className?: string;
+  iconColor?: TextColors;
+  iconBgColor?: FillColors;
+};

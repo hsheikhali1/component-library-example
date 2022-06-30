@@ -1,3 +1,4 @@
+import React from "react";
 import { twMerge } from "tailwind-merge";
 
 export const enum TextStyles {
@@ -13,6 +14,7 @@ export interface TextProps {
   color?: string;
   className?: string;
   bold?: boolean;
+  children?: React.ReactNode;
 }
 
 const Text: React.FC<TextProps> = ({

@@ -9,7 +9,7 @@ export default {
 } as ComponentMeta<typeof Icon>;
 
 const Template: ComponentStory<typeof Icon> = (args) => (
-  <Icon name="sso" {...args} />
+  <Icon {...args} />
 );
 
 export const BasicIcons = Template.bind({});
